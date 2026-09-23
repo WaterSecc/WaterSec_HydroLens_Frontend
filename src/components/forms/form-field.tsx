@@ -1,0 +1,3 @@
+import * as React from 'react'
+import { Label } from '@/components/ui/label'
+export function FormField({ id, label, description, error, required, children }: { id: string; label: string; description?: string; error?: string; required?: boolean; children: React.ReactNode }) { return <div className="grid gap-2"><Label htmlFor={id}>{label}{required && <span className="text-destructive"> *</span>}</Label>{children}{description && !error && <p className="text-xs text-muted-foreground">{description}</p>}{error && <p id={`${id}-error`} className="text-xs font-medium text-destructive">{error}</p>}</div> }
